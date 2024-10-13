@@ -4,7 +4,7 @@ import DeleteButton from "./DeleteButton";
 import { setNewOffset, autoGrow, setZIndex, bodyParser } from "../utils";
 import Spinner from "../icons/Spinner";
 
-const NoteCard = ({ note, setNotes }) => {
+const NoteCard = ({ note }) => {
   const [saving, setSaving] = useState(false);
   const keyUpTimer = useRef(null);
 
@@ -96,7 +96,7 @@ const NoteCard = ({ note, setNotes }) => {
         className="card-header"
         style={{ backgroundColor: colors.colorHeader }}
       >
-        <DeleteButton noteId={note.$id} setNotes={setNotes} />
+        <DeleteButton noteId={note.$id} />
         {saving && (
           <div className="card-saving">
             <Spinner color={colors.colorText} />
